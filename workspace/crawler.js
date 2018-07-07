@@ -9,6 +9,12 @@ function crawl(text) {
     }
     let hasAdded = false
 
+    function add(str){
+        if (!hasAdded) all += (currentBase.base + currentBase.diacs)
+        all += str
+        hasAdded = true
+    }
+
     for (const char of text) {
         prev = current
         current = char
@@ -32,6 +38,7 @@ function crawl(text) {
                 all = all.replace(prev, "")
                 all += sampleDiacritic
             }
+            else add(current)
         }
         else if (prev === ";") {
             const repl = currentBase.base
@@ -41,15 +48,9 @@ function crawl(text) {
                 all = all.replace(";", "")
                 all = all.replace(repl, currentBase.base)
             }
-            else all += current
+            else add(current)
         }
-        else if (symbols.includes(current)) {
-            if (!hasAdded) {
-                all += (currentBase.base + currentBase.diacs)
-                hasAdded = true
-            }
-            all += current
-        }
+        else if (symbols.includes(current)) add(current)
         else if (baseCharacters[current] !== undefined) {
             if (!hasAdded) all += (currentBase.base + currentBase.diacs)
             currentBase = {
@@ -58,7 +59,7 @@ function crawl(text) {
             }
             hasAdded = false
         }
-        else all += current // console.error("Unknown char!", current)
+        else add(current)
     }
     return all + (hasAdded ? "" : (currentBase.base + currentBase.diacs))
 }

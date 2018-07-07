@@ -1,4 +1,3 @@
-//const acceptedCharacters = "abcdefghijklmnopqrstuvwxyzBEHILNORY01234567890 /\\[];^\".+~?!\',:=_*<>()"
 let symbols = " /\\[]012456789;^\".+~?!\',:=_<>()\r\n"
 
 
@@ -186,11 +185,13 @@ const baseCharacters = {
     "l": {
         "h": "ɬ",
         "z": "ɮ",
-        ",": "ɭ"
+        ",": "ɭ",
+        "~": "ɫ"
     },
     "ɬ": {},
     "ɮ": {},
     "ɭ": {},
+    "ɫ": {},
     "ʟ": {},
     "m": {
         "g": "ɱ",
