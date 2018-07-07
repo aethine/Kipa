@@ -7,14 +7,20 @@ function setInput(value) {
   currentText = value
   getInput().value = value
 }
-function posInput(x, y) {
-  getInput().style.left = x
-  getInput().style.top = y
-}
+// function posInput(x, y) {
+//   getInput().style.paddingLeft = x
+//   getInput().style.paddingTop = y
+// }
 
 function setup() {
   noCanvas()
-  //posInput(-100, -100)
+  for (const top of Object.values(allDiacritics)) {
+    for (const symb of Object.values(top)) {
+      symbols += symb
+    }
+  }
+  console.log(symbols)
+  // posInput(-100, -100)
 }
 
 function draw() {
@@ -27,17 +33,5 @@ function draw() {
 
 
 function update(text) {
-  if (text.length < 2) return
-
-  let key = text.substr(-2, 2)
-
-  console.log("base:", key[0])
-  let diacritic_base = allDiacritics[key[0]]
-  if (diacritic_base === undefined) return
-
-  console.log("sub:", key[1])
-  let diacritic = diacritic_base[key[1]]
-  if (diacritic !== undefined) {
-    setInput(text.substr(0, text.length - 2) + diacritic)
-  }
+  setInput(crawl(text))
 }

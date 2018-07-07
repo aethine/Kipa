@@ -1,5 +1,6 @@
 //const acceptedCharacters = "abcdefghijklmnopqrstuvwxyzBEHILNORY01234567890 /\\[];^\".+~?!\',:=_*<>()"
-const ignoredCharacters = " /\\[]012456789"
+let symbols = " /\\[]012456789;^\".+~?!\',:=_*<>()"
+
 
 const superscript = {
     "h": "ʰ",
