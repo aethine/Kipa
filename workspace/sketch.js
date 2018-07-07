@@ -1,15 +1,20 @@
 /// <reference path="../p5.global-mode.d.ts" />
 
 let currentText = ""
-function setup() {
-  noCanvas()
-}
-
 function getInput() {return document.getElementsByName("kipa-input")[0]}
 function getText() {return getInput().value}
 function setInput(value) {
   currentText = value
   getInput().value = value
+}
+function posInput(x, y) {
+  getInput().style.left = x
+  getInput().style.top = y
+}
+
+function setup() {
+  noCanvas()
+  //posInput(-100, -100)
 }
 
 function draw() {
@@ -22,6 +27,15 @@ function draw() {
 
 
 function update(text) {
-  console.log(text)
-  if (text.endsWith("~.")) setInput(text.substr(0, text.length - 2) + "̥")
+  if (text.length < 2) return
+
+  let key = text.substr(-2, 2)
+
+  let diacritic_base = allDiacritics[key[0]]
+  if (diacritic_base === undefined) return
+
+  let diacritic = diacritic_base[key[1]]
+  if (diacritic !== undefined) {
+    setInput(text.substr(0, text.length - 2) + diacritic)
+  }
 }
