@@ -1,5 +1,5 @@
 //const acceptedCharacters = "abcdefghijklmnopqrstuvwxyzBEHILNORY01234567890 /\\[];^\".+~?!\',:=_*<>()"
-let symbols = " /\\[]012456789;^\".+~?!\',:=_*<>()"
+let symbols = " /\\[]012456789;^\".+~?!\',:=_<>()\r\n"
 
 
 const superscript = {
@@ -21,11 +21,17 @@ const tone = {
     "L": "̏",
     "r": "̌",
     "f": "̂",
-    "^": "᷈",
-
+    "^": "᷈"
 }
 const toneSeperate = {
-
+    "H": "˥",
+    "h": "˦",
+    "-": "˧",
+    "l": "˨",
+    "L": "˩",
+    "r": "˩˥",
+    "f": "˥˩",
+    "^": "˧˦˧"
 }
 const suprasegmental = {
     "'": "ˈ",
@@ -70,7 +76,8 @@ const allDiacritics = {
     "\"": tone,
     "." : suprasegmental,
     "+": place,
-    "~": quality
+    "~": quality,
+    sepTone: toneSeperate
 }
 
 const replace = {
@@ -301,5 +308,9 @@ const baseCharacters = {
         "|": "ǁ"
     },
     "ǂ": {},
-    "ǁ": {}
+    "ǁ": {},
+    "*": {
+        "*": "◌"
+    },
+    "◌": {}
 }

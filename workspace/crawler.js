@@ -20,7 +20,14 @@ function crawl(text) {
         
         if (allDiacritics[prev] !== undefined) {
             let sampleDiacritic = allDiacritics[prev][current]
+            
             if (sampleDiacritic !== undefined) {
+                if (currentBase.base === "*") {
+                    if (prev === "\"") {
+                        all = all.replace("*", "")
+                        sampleDiacritic = toneSeperate[current]
+                    }
+                }
                 currentBase.diacs += sampleDiacritic
                 all = all.replace(prev, "")
                 all += sampleDiacritic
@@ -31,9 +38,10 @@ function crawl(text) {
             const baseRef = baseCharacters[currentBase.base]
             if ((baseRef !== undefined) && (baseRef[current] !== undefined)) {
                 currentBase.base = baseRef[current]
+                all = all.replace(";", "")
+                all = all.replace(repl, currentBase.base)
             }
-            all = all.replace(";", "")
-            all = all.replace(repl, currentBase.base)
+            else all += current
         }
         else if (symbols.includes(current)) {
             if (!hasAdded) {

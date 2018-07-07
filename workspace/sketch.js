@@ -7,10 +7,6 @@ function setInput(value) {
   currentText = value
   getInput().value = value
 }
-// function posInput(x, y) {
-//   getInput().style.paddingLeft = x
-//   getInput().style.paddingTop = y
-// }
 
 function setup() {
   noCanvas()
@@ -19,8 +15,14 @@ function setup() {
       symbols += symb
     }
   }
-  console.log(symbols)
-  // posInput(-100, -100)
+
+  if (document.getElementsByName("kipa-input").length <= 0){
+    console.error("Could not find kipa-input")
+    noLoop()
+  }
+  if (document.getElementsByName("kipa-reset").length > 0) {
+    const button = document.getElementsByName("kipa-reset")[0]
+  }
 }
 
 function draw() {
@@ -34,4 +36,7 @@ function draw() {
 
 function update(text) {
   setInput(crawl(text))
+}
+function reset() {
+  setInput("")
 }
