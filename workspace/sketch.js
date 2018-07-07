@@ -31,9 +31,11 @@ function update(text) {
 
   let key = text.substr(-2, 2)
 
+  console.log("base:", key[0])
   let diacritic_base = allDiacritics[key[0]]
   if (diacritic_base === undefined) return
 
+  console.log("sub:", key[1])
   let diacritic = diacritic_base[key[1]]
   if (diacritic !== undefined) {
     setInput(text.substr(0, text.length - 2) + diacritic)
