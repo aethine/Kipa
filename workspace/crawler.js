@@ -58,7 +58,7 @@ function crawl(text) {
             }
             hasAdded = false
         }
-        else console.error("Unknown char!", current)
+        else all += current // console.error("Unknown char!", current)
     }
     return all + (hasAdded ? "" : (currentBase.base + currentBase.diacs))
 }
