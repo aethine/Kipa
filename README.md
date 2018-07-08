@@ -3,6 +3,8 @@
 US-Standard keyboard input for the IPA. Keep reading for more info.
 Try it [here!](https://aethine.github.io/Kipa/)
 
+If you think anything about the below codes should be different, submit a pull request detailing your changes.
+
 # Guide
 
 Kipa is an IPA converter designed to be used with the US-Standard keyboard layout. 
