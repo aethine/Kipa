@@ -46,7 +46,7 @@ function crawl(text) {
             }
             else add(current)
         }
-        else if (symbols.includes(current)) add(current)
+        // else if (symbols.includes(current)) add(current)
         else {
             if (replace[current] !== undefined) {
                 current = replace[current]
