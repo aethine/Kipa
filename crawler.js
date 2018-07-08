@@ -19,10 +19,6 @@ function crawl(text) {
         prev = current
         current = char
         
-        if (replace[current] !== undefined) {
-            current = replace[current]
-        }
-
         
         if (allDiacritics[prev] !== undefined) {
             let sampleDiacritic = allDiacritics[prev][current]
@@ -51,15 +47,20 @@ function crawl(text) {
             else add(current)
         }
         else if (symbols.includes(current)) add(current)
-        else if (baseCharacters[current] !== undefined) {
-            if (!hasAdded) all += (currentBase.base + currentBase.diacs)
-            currentBase = {
-                "base": current,
-                "diacs": ""
+        else {
+            if (replace[current] !== undefined) {
+                current = replace[current]
             }
-            hasAdded = false
+            if (baseCharacters[current] !== undefined) {
+                if (!hasAdded) all += (currentBase.base + currentBase.diacs)
+                currentBase = {
+                    "base": current,
+                    "diacs": ""
+                }
+                hasAdded = false
+            }
+            else add(current)
         }
-        else add(current)
     }
     return all + (hasAdded ? "" : (currentBase.base + currentBase.diacs))
 }
