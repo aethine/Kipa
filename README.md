@@ -30,7 +30,7 @@ To use a modifier use the category + the sub-symbol. For example, aspirated (◌
 ### " (Tone):
 - H → extra high (e̋)
 - h → high (é)
-- - → mid (ē)
+- \- → mid (ē)
 - l → low (è)
 - L → extra low (ȅ)
 - r → rising (ě)
@@ -54,7 +54,7 @@ To use a modifier use the category + the sub-symbol. For example, aspirated (◌
 - _ → tie bar below (place on first of pair) (a͜b)
 
 ### + (Place):
-- + → advanced (e̟)
+- \+ → advanced (e̟)
 - \- → retracted (e̠)
 - : → centralized (ë)
 - x → mid-centralized (e̽)
