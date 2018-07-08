@@ -1,5 +1,4 @@
-# Kipa [kʰiːpə]
-### (kipa: [k^hi.:pe;^])
+# Kipa [kʰiːpə] 
 
 US-Standard keyboard input for the IPA. Keep reading for more info.
 
@@ -15,7 +14,9 @@ All diacritics (and special characters) are composed with a base letter and mult
 
 # All modifiers
 
-### ^ (superscript):
+To use a modifier use the category + the sub-symbol. For example, aspirated (◌ʰ) is the subsymbol "h" under the "^" (superscript) category. You would then type ^h, and those two characters will be replaced by "ʰ".
+
+### ^ (Superscript):
 - h => aspirated (◌ʰ)
 - w => labialized (◌ʷ)
 - j => palatalized (◌ʲ)
@@ -24,3 +25,17 @@ All diacritics (and special characters) are composed with a base letter and mult
 - n => nasal release (◌ⁿ)
 - l => lateral release (◌ˡ)
 - . => no audible release (◌˺)
+
+### " (Tone):
+- H => extra high (◌̋)
+- h => high (◌
+- - => mid (◌
+- l => low (◌
+- L => extra low (◌
+- r => rising (◌
+- f => falling (◌
+- ^ => rising-falling (◌
+- d => downstep (↓)
+- u => upstep (↑)
+- G => global rising (↗)
+- g => global falling (↘)
