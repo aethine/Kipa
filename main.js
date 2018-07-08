@@ -7,7 +7,6 @@ function setInput(value) {
 
 
 function update() {
-  while (!hasSetup) {} // wait
   setInput(crawl(getText()))
 }
 function reset() {
