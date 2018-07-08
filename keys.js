@@ -76,7 +76,7 @@ const allDiacritics = {
     "." : suprasegmental,
     "+": place,
     "~": quality,
-    sepTone: toneSeperate
+    "*\"": toneSeperate
 }
 
 const replace = {
